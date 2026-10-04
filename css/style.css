@@ -31,3 +31,15 @@ main {
   height: 5%;
   border: 1px solid #ccc;
 }
+
+.cell.snake {
+  background-color: #2e8b57;
+}
+
+.cell.snake-head {
+  background-color: #145a32;
+}
+
+.cell.food {
+  background-color: #e74c3c;
+}

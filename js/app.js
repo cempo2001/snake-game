@@ -39,7 +39,7 @@ const initializeGame = () => {
   messageElement.textContent = 'Press Start to play.';
 };
 
-initializeGame();
+
 
 const createBoard = () => {
   const totalCells = gameConfig.boardSize * gameConfig.boardSize;
@@ -52,5 +52,34 @@ const createBoard = () => {
   }
 };
 
+
+
+const updateBoard = () => {
+  cellElements.forEach((cellElement) => {
+    cellElement.classList.remove('snake', 'snake-head', 'food');
+  });
+
+  snake.forEach((segment, index) => {
+    const cellIndex = segment.y * gameConfig.boardSize + segment.x;
+    const cellElement = cellElements[cellIndex];
+
+    if (index === 0) {
+      cellElement.classList.add('snake-head');
+    } else {
+      cellElement.classList.add('snake');
+    }
+  });
+
+  const foodIndex = food.y * gameConfig.boardSize + food.x;
+  const foodCellElement = cellElements[foodIndex];
+
+  foodCellElement.classList.add('food');
+};
+
 createBoard();
+
+const cellElements = document.querySelectorAll('.cell');
+
+initializeGame();
+updateBoard();
 /*----------------------------- Event Listeners -----------------------------*/
