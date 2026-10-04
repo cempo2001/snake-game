@@ -1,0 +1,1 @@
+Set up initial Snake game project structure and planning
