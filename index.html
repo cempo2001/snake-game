@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script defer src="./js/data.js"></script>
+    <script defer src="./js/app.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Snake</h1>
+    </header>
+
+    <main>
+      <section class="game-info">
+        <p>Score: <span id="score">0</span></p>
+        <p id="message">Press Start to play.</p>
+      </section>
+
+      <section id="game-board" aria-label="Snake game board"></section>
+
+      <section class="game-controls">
+        <button id="start-button">Start Game</button>
+        <button id="restart-button">Restart</button>
+      </section>
+
+      <p class="instructions">
+        Use the arrow keys to move the snake. Eat the food and avoid the walls
+        and your own body. Reach 10 points to win.
+      </p>
+    </main>
+  </body>
+</html>
