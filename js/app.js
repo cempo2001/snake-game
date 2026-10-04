@@ -40,4 +40,17 @@ const initializeGame = () => {
 };
 
 initializeGame();
+
+const createBoard = () => {
+  const totalCells = gameConfig.boardSize * gameConfig.boardSize;
+
+  for (let i = 0; i < totalCells; i++) {
+    const cellElement = document.createElement('div');
+    cellElement.classList.add('cell');
+    cellElement.id = `cell-${i}`;
+    gameBoardElement.appendChild(cellElement);
+  }
+};
+
+createBoard();
 /*----------------------------- Event Listeners -----------------------------*/
