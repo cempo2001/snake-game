@@ -1,0 +1,92 @@
+# Snake
+
+Snake is a browser-based game in which the player controls a snake, collects food, and tries to reach the target score without hitting the edge of the board or the snake's own body.
+
+The game is currently under development.
+
+## Screenshot
+
+A screenshot will be added when the game interface is ready.
+
+## Getting Started
+
+To view the current page, open `index.html` in a web browser.
+
+The game is not deployed yet. A link to the deployed game will be added here when deployment is complete.
+
+The approved project plan is available in [planning.md](./planning.md).
+
+## Current Project Structure
+
+```text
+snake-game/
+├── assets/
+│   └── .gitkeep
+├── css/
+│   └── style.css
+├── js/
+│   ├── app.js
+│   └── data.js
+├── index.html
+├── planning.md
+└── README.md
+```
+
+## What Has Been Built
+
+### `index.html`
+
+- Provides the page structure and game title.
+- Includes the score, status message, game board, Start Game button, Restart button, and instructions.
+- Links to the stylesheet and JavaScript files.
+- Loads `data.js` before `app.js`.
+
+### `css/style.css`
+
+- Uses Flexbox to arrange the page content and game controls.
+- Styles the game board and its cells.
+- Gives the snake's head, body, and food different colours.
+
+### `js/data.js`
+
+- Stores the game configuration in the `gameConfig` object.
+- Sets the board size to 20 cells and the target score to 10.
+- Defines the starting positions of the snake and food.
+
+### `js/app.js`
+
+- Stores the current game values, including the snake, food, direction, score, and win or loss status.
+- Selects the relevant HTML elements.
+- Defines `initializeGame()` to set the starting game values.
+- Defines `createBoard()` to add 400 cells to the page.
+- Defines `updateBoard()` to display the snake and food on the board.
+
+The Start Game and Restart buttons are displayed, but their game behaviour has not been implemented yet. Snake movement, food collection, score updates, and win and loss logic are also still to come.
+
+### `planning.md`
+
+Contains the approved project plan and gameplay pseudocode.
+
+### `assets/`
+
+Reserved for images or other game assets added later.
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- Git
+- GitHub
+
+## Attributions
+
+No external assets or libraries have been added yet.
+
+## Next Steps
+
+- Make the Start Game and Restart buttons work.
+- Add arrow-key controls and continuous snake movement.
+- Add food collection, snake growth, and score updates.
+- Add collision detection and win and loss messages.
+- Test the game, add a screenshot, and deploy it.
