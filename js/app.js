@@ -135,15 +135,27 @@ if (hitSnake === true) {
 
   snake.unshift(newHead);
 
-  if (ateFood === true) {
-    score = score + 1;
-    scoreElement.textContent = score;
-    food = getRandomFood();
-  } else {
-    snake.pop();
-  }
+if (ateFood === true) {
+  updateScore();
+  food = getRandomFood();
+} else {
+  snake.pop();
+}
 
   updateBoard();
+};
+
+const updateScore = () => {
+  score = score + 1;
+  scoreElement.textContent = score;
+
+  if (score >= gameConfig.targetScore) {
+    winner = true;
+    gameOver = true;
+    clearInterval(gameTimer);
+    messageElement.textContent =
+      `You win! You reached ${gameConfig.targetScore} points!`;
+  }
 };
 
 const startGame = () => {
