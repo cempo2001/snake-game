@@ -1,20 +1,57 @@
-# Snake
+# Snake Game
 
-Snake is a browser-based game in which the player controls a snake, collects food, and tries to reach the target score without hitting the edge of the board or the snake's own body.
+![Screenshot of the Snake Game](./assets/snake-game.png)
 
-The game is currently under development.
+A browser-based Snake game built with HTML, CSS, and JavaScript. Guide the snake around the board, collect food, and reach the target score without hitting a wall or the snake’s own body.
 
-## Screenshot
+## How to Play
 
-A screenshot will be added when the game interface is ready.
+1. Click **Start** to begin the game.
+2. Use the arrow keys to control the snake.
+3. Collect food to earn points.
+4. Avoid hitting the walls or the snake’s own body.
+5. Reach **10 points** to win.
 
-## Getting Started
+## Features
 
-To view the current page, open `index.html` in a web browser.
+- A 20 × 20 game board.
+- Keyboard controls using the arrow keys.
+- Food appears in an unoccupied cell.
+- The score increases when the snake eats food.
+- The game ends if the snake hits a wall or itself.
+- The player wins after reaching 10 points.
 
-The game is not deployed yet. A link to the deployed game will be added here when deployment is complete.
+## Project Structure
 
-The approved project plan is available in [planning.md](./planning.md).
+- `index.html` — the page structure and game elements.
+- `css/style.css` — the page layout and game board styling, using Flexbox.
+- `js/data.js` — game settings and starting positions for the snake and food.
+- `js/app.js` — game state, board rendering, movement, keyboard controls, scoring, and win/loss logic.
+- `planning.md` — the project plan and pseudocode.
+- `assets/` — images and other game resources.
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- DOM manipulation
+- CSS Flexbox
+
+## Planning Materials
+
+See [`planning.md`](./planning.md) for the project plan and pseudocode.
+
+## Attributions
+
+No external images, libraries, or other assets are currently used.
+
+## Next Steps
+
+- Add and test restart functionality.
+- Test the win, wall-collision, and self-collision conditions.
+- Improve the appearance of the snake, food, and background.
+- Deploy the game and add the live link here.
 
 ## Current Project Structure
 
@@ -63,13 +100,10 @@ snake-game/
 
 The Start Game and Restart buttons are displayed, but their game behaviour has not been implemented yet. Snake movement, food collection, score updates, and win and loss logic are also still to come.
 
-### `planning.md`
-
-Contains the approved project plan and gameplay pseudocode.
 
 ### `assets/`
 
-Reserved for images or other game assets added later.
+Reserved for images or other game assets.
 
 ## Technologies Used
 
