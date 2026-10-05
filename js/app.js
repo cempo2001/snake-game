@@ -7,6 +7,7 @@ const winningScore = gameConfig.targetScore;
 let snake = [];
 let food = {};
 let direction = 'right';
+let nextDirection = 'right';
 let score = 0;
 let gameOver = false;
 let winner = false;
@@ -33,6 +34,7 @@ const initializeGame = () => {
   };
 
   direction = 'right';
+  nextDirection = 'right';
   score = 0;
   gameOver = false;
   winner = false;
@@ -86,6 +88,7 @@ initializeGame();
 updateBoard();
 
 const moveSnake = () => {
+  direction = nextDirection;  
   const head = snake[0];
   const newHead = {
     x: head.x,
@@ -130,6 +133,34 @@ const startGame = () => {
 
   gameTimer = setInterval(moveSnake, 200);
 };
+const handleDirection = (event) => {
+  if (gameStarted === false || gameOver === true) {
+    return;
+  }
+
+  if (event.key === 'ArrowUp') {
+    event.preventDefault();
+    if (nextDirection !== 'down') {
+      nextDirection = 'up';
+    }
+  } else if (event.key === 'ArrowDown') {
+    event.preventDefault();
+    if (nextDirection !== 'up') {
+      nextDirection = 'down';
+    }
+  } else if (event.key === 'ArrowLeft') {
+    event.preventDefault();
+    if (nextDirection !== 'right') {
+      nextDirection = 'left';
+    }
+  } else if (event.key === 'ArrowRight') {
+    event.preventDefault();
+    if (nextDirection !== 'left') {
+      nextDirection = 'right';
+    }
+  }
+};
 /*----------------------------- Event Listeners -----------------------------*/
 
 startButtonElement.addEventListener('click', startGame);
+window.addEventListener('keydown', handleDirection);
