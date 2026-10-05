@@ -10,6 +10,8 @@ let direction = 'right';
 let score = 0;
 let gameOver = false;
 let winner = false;
+let gameTimer = null;
+let gameStarted = false;
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -82,4 +84,52 @@ const cellElements = document.querySelectorAll('.cell');
 
 initializeGame();
 updateBoard();
+
+const moveSnake = () => {
+  const head = snake[0];
+  const newHead = {
+    x: head.x,
+    y: head.y,
+  };
+
+  if (direction === 'right') {
+    newHead.x += 1;
+  } else if (direction === 'left') {
+    newHead.x -= 1;
+  } else if (direction === 'up') {
+    newHead.y -= 1;
+  } else if (direction === 'down') {
+    newHead.y += 1;
+  }
+
+  if (
+    newHead.x < 0 ||
+    newHead.x >= gameConfig.boardSize ||
+    newHead.y < 0 ||
+    newHead.y >= gameConfig.boardSize
+  ) {
+    gameOver = true;
+    clearInterval(gameTimer);
+    messageElement.textContent = 'Game over! The snake hit the wall.';
+    return;
+  }
+
+  snake.unshift(newHead);
+  snake.pop();
+
+  updateBoard();
+};
+
+const startGame = () => {
+  if (gameStarted === true || gameOver === true) {
+    return;
+  }
+
+  gameStarted = true;
+  messageElement.textContent = 'Use the arrow keys to move the snake.';
+
+  gameTimer = setInterval(moveSnake, 200);
+};
 /*----------------------------- Event Listeners -----------------------------*/
+
+startButtonElement.addEventListener('click', startGame);
