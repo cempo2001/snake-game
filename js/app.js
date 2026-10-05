@@ -88,7 +88,8 @@ initializeGame();
 updateBoard();
 
 const moveSnake = () => {
-  direction = nextDirection;  
+  direction = nextDirection;
+
   const head = snake[0];
   const newHead = {
     x: head.x,
@@ -117,8 +118,30 @@ const moveSnake = () => {
     return;
   }
 
+  const ateFood = newHead.x === food.x && newHead.y === food.y;
+  const snakeBodyToCheck =
+  ateFood === true ? snake : snake.slice(0, snake.length - 1);
+
+const hitSnake = snakeBodyToCheck.some((segment) => {
+  return segment.x === newHead.x && segment.y === newHead.y;
+});
+
+if (hitSnake === true) {
+  gameOver = true;
+  clearInterval(gameTimer);
+  messageElement.textContent = 'Game over! The snake hit itself.';
+  return;
+}
+
   snake.unshift(newHead);
-  snake.pop();
+
+  if (ateFood === true) {
+    score = score + 1;
+    scoreElement.textContent = score;
+    food = getRandomFood();
+  } else {
+    snake.pop();
+  }
 
   updateBoard();
 };
@@ -159,6 +182,24 @@ const handleDirection = (event) => {
       nextDirection = 'right';
     }
   }
+};
+
+const getRandomFood = () => {
+  let foodPosition = {};
+  let foodIsOnSnake = true;
+
+  while (foodIsOnSnake === true) {
+    foodPosition = {
+      x: Math.floor(Math.random() * gameConfig.boardSize),
+      y: Math.floor(Math.random() * gameConfig.boardSize),
+    };
+
+    foodIsOnSnake = snake.some((segment) => {
+      return segment.x === foodPosition.x && segment.y === foodPosition.y;
+    });
+  }
+
+  return foodPosition;
 };
 /*----------------------------- Event Listeners -----------------------------*/
 
