@@ -29,6 +29,11 @@ Click **Start Game** and use the arrow keys to move the snake. Eat food, avoid t
 - A custom background image.
 - A light/dark mode toggle.
 - Updated styling for the game board, snake, and food.
+- Custom background image.
+- Light and dark mode toggle.
+- Snake sound effect when food is collected.
+- Animated win message.
+- Best score saved in the browser using `localStorage`.
 
 ## Project Structure
 
@@ -74,11 +79,11 @@ See [`planning.md`](./planning.md) for the project plan and pseudocode.
 
 No external images, libraries, or other assets are currently used.
 
+
 ## Next Steps
 
-- Improve the appearance of the snake, food, and background.
-- Add sound effects or a win animation.
-- Save the best score using `localStorage`.
+- Improve the snake and food graphics.
+- Add mobile touch controls.
 
 ### Level Up Features
 
