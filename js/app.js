@@ -49,6 +49,8 @@ const initializeGame = () => {
 
   scoreElement.textContent = score;
   messageElement.textContent = 'Press Start to play.';
+  messageElement.classList.remove('winner-message');
+    updateBoard();
 };
 
 
@@ -161,12 +163,13 @@ const updateScore = () => {
   score = score + 1;
   scoreElement.textContent = score;
 
-  if (score >= gameConfig.targetScore) {
+  if (score >= winningScore) {
     winner = true;
     gameOver = true;
     clearInterval(gameTimer);
     messageElement.textContent =
       `You win! You reached ${gameConfig.targetScore} points!`;
+      messageElement.classList.add('winner-message');
   }
 };
 

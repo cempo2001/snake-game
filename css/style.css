@@ -154,3 +154,37 @@ body.dark-mode #game-board {
 body.dark-mode .cell {
   border-color: #496252;
 }
+
+#message {
+  position: relative;
+}
+
+#message.winner-message {
+  color: #14532d;
+  font-size: 1.25rem;
+  animation: celebrate 0.6s ease-in-out infinite alternate;
+}
+
+#message.winner-message::before {
+  content: "🎉";
+  margin-right: 8px;
+}
+
+#message.winner-message::after {
+  content: "🎊";
+  margin-left: 8px;
+}
+
+@keyframes celebrate {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.08);
+  }
+}
+
+body.dark-mode #message.winner-message {
+  color: #c7f9d4;
+}
