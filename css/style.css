@@ -8,7 +8,12 @@ body {
   padding: 24px;
   font-family: system-ui, sans-serif;
   color: #17352b;
-  background: linear-gradient(135deg, #e5f5e9, #c9e8d1);
+  background-image:
+    linear-gradient(rgba(10, 35, 45, 0.25), rgba(10, 35, 45, 0.25)),
+    url("../assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,6 +62,8 @@ main {
   flex-wrap: wrap;
   width: min(80vw, 400px);
   aspect-ratio: 1 / 1;
+  margin-left: auto;
+  margin-right: auto;
   overflow: hidden;
   background-color: #eaf5ec;
   border: 4px solid #245c3b;
@@ -119,4 +126,31 @@ button:focus-visible {
   margin: 0;
   text-align: center;
   line-height: 1.5;
+}
+
+body.dark-mode {
+  color: #f3f4f6;
+}
+
+body.dark-mode h1 {
+  color: #ffffff;
+}
+
+body.dark-mode main {
+  color: #f3f4f6;
+  background-color: #172923;
+  border-color: #527660;
+}
+
+body.dark-mode #message {
+  color: #c7f9d4;
+}
+
+body.dark-mode #game-board {
+  background-color: #20382d;
+  border-color: #9ac5a5;
+}
+
+body.dark-mode .cell {
+  border-color: #496252;
 }

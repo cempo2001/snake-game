@@ -21,6 +21,7 @@ const scoreElement = document.querySelector('#score');
 const messageElement = document.querySelector('#message');
 const startButtonElement = document.querySelector('#start-button');
 const restartButtonElement = document.querySelector('#restart-button');
+const themeButtonElement = document.querySelector('#theme-button');
 
 /*-------------------------------- Functions --------------------------------*/
 const initializeGame = () => {
@@ -218,8 +219,19 @@ const getRandomFood = () => {
 
   return foodPosition;
 };
+
+const handleThemeChange = () => {
+  document.body.classList.toggle('dark-mode');
+
+  if (document.body.classList.contains('dark-mode')) {
+    themeButtonElement.textContent = 'Light Mode';
+  } else {
+    themeButtonElement.textContent = 'Dark Mode';
+  }
+};
 /*----------------------------- Event Listeners -----------------------------*/
 
 startButtonElement.addEventListener('click', startGame);
 restartButtonElement.addEventListener('click', initializeGame);
+themeButtonElement.addEventListener('click', handleThemeChange);
 window.addEventListener('keydown', handleDirection);
