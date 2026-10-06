@@ -36,6 +36,20 @@ Click **Start Game** and use the arrow keys to move the snake. Eat food, avoid t
 - `planning.md` — the project plan and pseudocode.
 - `assets/` — images and other game resources.
 
+```text
+snake-game/
+├── assets/
+│   └── .gitkeep
+├── css/
+│   └── style.css
+├── js/
+│   ├── app.js
+│   └── data.js
+├── index.html
+├── planning.md
+└── README.md
+```
+
 ## Technologies Used
 
 - HTML
@@ -54,26 +68,17 @@ No external images, libraries, or other assets are currently used.
 
 ## Next Steps
 
-- Add and test restart functionality.
-- Test the win, wall-collision, and self-collision conditions.
 - Improve the appearance of the snake, food, and background.
-- Deploy the game and add the live link here.
+- Add sound effects or a win animation.
+- Save the best score using `localStorage`.
 
-## Current Project Structure
+### Level Up Features
 
-```text
-snake-game/
-├── assets/
-│   └── .gitkeep
-├── css/
-│   └── style.css
-├── js/
-│   ├── app.js
-│   └── data.js
-├── index.html
-├── planning.md
-└── README.md
-```
+- Improve the visual design of the snake, food, and game background.
+- Add a sound effect when the snake eats food.
+- Add a win animation or confetti when the player reaches 10 points.
+- Save and display the player's best score using `localStorage`.
+
 
 ## What Has Been Built
 
@@ -123,10 +128,3 @@ Reserved for images or other game assets.
 
 No external assets or libraries have been added yet.
 
-## Next Steps
-
-- Make the Start Game and Restart buttons work.
-- Add arrow-key controls and continuous snake movement.
-- Add food collection, snake growth, and score updates.
-- Add collision detection and win and loss messages.
-- Test the game, add a screenshot, and deploy it.
