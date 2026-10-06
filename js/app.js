@@ -9,6 +9,7 @@ let food = {};
 let direction = 'right';
 let nextDirection = 'right';
 let score = 0;
+let bestScore = Number(localStorage.getItem('bestScore')) || 0;
 let gameOver = false;
 let winner = false;
 let gameTimer = null;
@@ -18,6 +19,7 @@ let gameStarted = false;
 
 const gameBoardElement = document.querySelector('#game-board');
 const scoreElement = document.querySelector('#score');
+const bestScoreElement = document.querySelector('#best-score');
 const messageElement = document.querySelector('#message');
 const startButtonElement = document.querySelector('#start-button');
 const restartButtonElement = document.querySelector('#restart-button');
@@ -48,6 +50,7 @@ const initializeGame = () => {
   winner = false;
 
   scoreElement.textContent = score;
+  bestScoreElement.textContent = bestScore;
   messageElement.textContent = 'Press Start to play.';
   messageElement.classList.remove('winner-message');
     updateBoard();
@@ -162,6 +165,12 @@ if (ateFood === true) {
 const updateScore = () => {
   score = score + 1;
   scoreElement.textContent = score;
+
+  if (score > bestScore) {
+  bestScore = score;
+  bestScoreElement.textContent = bestScore;
+  localStorage.setItem('bestScore', bestScore);
+}
 
   if (score >= winningScore) {
     winner = true;
