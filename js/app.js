@@ -24,6 +24,11 @@ const restartButtonElement = document.querySelector('#restart-button');
 
 /*-------------------------------- Functions --------------------------------*/
 const initializeGame = () => {
+
+  clearInterval(gameTimer);
+  gameTimer = null;
+  gameStarted = false;
+
   snake = gameConfig.startingSnake.map((segment) => {
     return { x: segment.x, y: segment.y };
   });
@@ -85,7 +90,7 @@ createBoard();
 const cellElements = document.querySelectorAll('.cell');
 
 initializeGame();
-updateBoard();
+
 
 const moveSnake = () => {
   direction = nextDirection;
@@ -216,4 +221,5 @@ const getRandomFood = () => {
 /*----------------------------- Event Listeners -----------------------------*/
 
 startButtonElement.addEventListener('click', startGame);
+restartButtonElement.addEventListener('click', initializeGame);
 window.addEventListener('keydown', handleDirection);
