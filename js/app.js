@@ -22,6 +22,8 @@ const messageElement = document.querySelector('#message');
 const startButtonElement = document.querySelector('#start-button');
 const restartButtonElement = document.querySelector('#restart-button');
 const themeButtonElement = document.querySelector('#theme-button');
+const eatSoundElement = document.querySelector('#eat-sound');
+
 
 /*-------------------------------- Functions --------------------------------*/
 const initializeGame = () => {
@@ -142,9 +144,13 @@ if (hitSnake === true) {
   snake.unshift(newHead);
 
 if (ateFood === true) {
+  eatSoundElement.currentTime = 0;
+  eatSoundElement.play();
+
   updateScore();
   food = getRandomFood();
-} else {
+}
+ else {
   snake.pop();
 }
 
