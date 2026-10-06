@@ -26,6 +26,9 @@ Click **Start Game** and use the arrow keys to move the snake. Eat food, avoid t
 - The score increases when the snake eats food.
 - The game ends if the snake hits a wall or itself.
 - The player wins after reaching 10 points.
+- A custom background image.
+- A light/dark mode toggle.
+- Updated styling for the game board, snake, and food.
 
 ## Project Structure
 
@@ -61,6 +64,11 @@ snake-game/
 ## Planning Materials
 
 See [`planning.md`](./planning.md) for the project plan and pseudocode.
+
+- Add a custom background image.
+- Add a light/dark mode toggle.
+- Improve the visual styling of the snake, food, and game board.
+- Add sound effects, a win animation, and best-score storage as future enhancements.
 
 ## Attributions
 
