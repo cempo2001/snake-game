@@ -4,6 +4,12 @@
 
 A browser-based Snake game built with HTML, CSS, and JavaScript. Guide the snake around the board, collect food, and reach the target score without hitting a wall or the snake’s own body.
 
+## Getting Started
+
+Play the game: [Snake Game](https://cempo2001.github.io/snake-game/)
+
+Click **Start Game** and use the arrow keys to move the snake. Eat food, avoid the walls and your own body, and reach 10 points to win.
+
 ## How to Play
 
 1. Click **Start** to begin the game.
